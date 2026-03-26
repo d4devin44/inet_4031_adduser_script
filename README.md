@@ -2,23 +2,24 @@
 
 ## Program Description
 
-Detailed and helpful description paragraph goes here. Describe how the program will help the user. It should talk about how the program is an automated way for the user to accomplish the manual task of adding users. Also include a description of what commands a user would normally use to add a user and then describe how those SAME COMMANDS are used by the script and automated.
+The program is a Python script that automates the task of adding new users to a Linux system. Without it, an administrator would need to manually run commands such as adduser to create accounts, passwd to assign passwords, and other commands to correctly group users. The script eliminates this repetitive process by reading user details from a file and executing all necessary commands automatically. It takes care of creating accounts, setting passwords, and managing group assignments all in one step. 
 
 ## Program User Operation
 
-This section should describe the overall operation of the program. After reading this section user should know what to do to make it work. Let the comments in your code explain "how" it work.
-
-This section should start off with a paragraph description, then have subsections for the following:
+This program functions by reading the data from an input file and processing each line within that file. Each line represents one user and contains all the information required to create an account. 
 
 ### Input File Format
 
-Explain the format of the input file. What is the purpose of each field in a line. Explain what the user needs to do if they want to skip a line in the input file. Expalin what the user needs to do if they do not want a new user added to any groups.
+Input file utilize colons to represent each user. Each line has 5 different fields: username, password, last name, first name, and group list. The group list is able to contain multiple groups. If a user has a dash, then that lets us know that the user shouldn't be added onto any groups. If a line starts with a #, then the script will skip that line and move onto the next. In the case that a line doesn't have all 5 fields, then it will be deemed invalid and be skipped as well.
+
 
 ### Command Excuction
 
-Explain how the user runs the code. Remind the user they may need to set the Python file to be executable. ./create-users.py < createusers.input
+In order to run a script, a user will have to first have a file that is executable in the first place. Next, the script can be ran through redirecting the input file into the script. The script will then read each line from the input file and processes it in that way.
+
+
 
 ### "Dry Run"
 
-Explain what happens if the user elects to do a "dry run."
+A dry run allows a user to test the functionality of a script without having to actually run the entire program. The script goes through the logic and prints out the commands that would have been executed as without them actually happening. This is useful for testing and ensuring that the script is functioning correctly. It helps prevent mistakes and aids the user in what they should fix to ensure that when the script is actually ran, there are none/limited errors.
 
